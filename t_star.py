@@ -13,9 +13,13 @@ print("*"*50)
 print("NEWS SECTIONS:")
 print("-"*20)
 print("\n")
+for i in soup.find_all('h1'):
+    print(n,i.text)
+    n=n+1
 for i in soup.find_all('h2'):
-    a="Talking Points"
-    if i.text not in a:
+    a="Featured"
+    b="Science"
+    if i.text not in a and i.text not in b:
         print(n,i.text)
         n=n+1
 print("*"*50)
@@ -39,32 +43,32 @@ while True:
         for i in soup.find_all('a'):
             print("\n",i.text)
     elif choose == "4":
-        src=urllib.request.urlopen('https://www.thestar.com/business.html').read()
-        soup=bs.BeautifulSoup(src,'html.parser')
-        for i in soup.find_all('a'):
-            print("\n",i.text)
-    elif choose == "5":
         src=urllib.request.urlopen('https://www.thestar.com/news/world.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
-    elif choose == "6":
-        src=urllib.request.urlopen('https://www.thestar.com/opinion/star-columnists.html').read()
+    elif choose == "5":
+        src=urllib.request.urlopen('https://www.thestar.com/business.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
-    elif choose == "7":
+    elif choose == "6":
         src=urllib.request.urlopen('https://www.thestar.com/opinion.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
+    elif choose == "7":
+        src=urllib.request.urlopen('https://www.thestar.com/news/canada.html').read()
+        soup=bs.BeautifulSoup(src,'html.parser')
+        for i in soup.find_all('a'):
+            print("\n",i.text)
     elif choose == "8":
-        src=urllib.request.urlopen('https://www.thestar.com/news/cannabis.html').read()
+        src=urllib.request.urlopen('https://www.thestar.com/sports.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
     elif choose == "9":
-        src=urllib.request.urlopen('https://www.thestar.com/sports.html').read()
+        src=urllib.request.urlopen('https://www.thestar.com/business/real_estate.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
