@@ -88,7 +88,7 @@ while True:
         for i in soup.find_all('a'):
             print("\n",i.text)
     elif choose == "13":
-        src=urllib.request.urlopen('https://www.thestar.com/news/story_behind_the_story.html').read()
+        src=urllib.request.urlopen('https://www.thestar.com/life/fashion_style.html').read()
         soup=bs.BeautifulSoup(src,'html.parser')
         for i in soup.find_all('a'):
             print("\n",i.text)
